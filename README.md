@@ -1,5 +1,5 @@
-![pocketex_logo](http://essenciary.com/public/pocketex2_64.png)
-#Pocketex 
+![pocketex_logo](http://essenciary.com/public/pocketex2_128.png)
+#Pocketex
 Pocketex is an Elixir client for the Pocket read later service ([getpocket.com]())
 
 
