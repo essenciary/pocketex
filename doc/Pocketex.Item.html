@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pocketex.Item</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="css/elixir.css" type="text/css" media="screen" charset="utf-8" />
+    <script type="text/javascript" charset="utf-8">
+      relpath = '';
+      if (relpath != '') relpath += '/';
+    </script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/highlight.pack.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      hljs.initHighlightingOnLoad();
+      hljs.configure({languages: []}); //disable autodetect
+    </script>
+  </head>
+
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+
+    <section id="content">
+      <div class="breadcrumbs">pocketex v0.1.0 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Pocketex.html">Pocketex</a> &rarr; <a href="Pocketex.Item.html">Item</a></div>
+      <h1>
+        Pocketex.Item
+        
+      </h1>
+
+      <ul class="summary_links">
+        
+          <li><a href="#summary">Summary</a></li>
+        
+        
+        
+          <li><a href="#functions_details">Functions</a></li>
+        
+        
+        
+      </ul>
+
+      
+        <section id="moduledoc" class="docstring">
+          <p>Wrapper functions for working with items (articles, images, videos) through the Pocket API</p>
+
+        </section>
+      
+
+      
+
+      
+        <h2 id="summary">Summary<span class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></span></h2>
+        <table class="summary">
+          <tr>
+  <td class="summary_signature"><a href="#add_tags/1">add_tags(options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#add_tags/2">add_tags(auth, options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#add_tags/4">add_tags(consumer_key, access_token, item_id, tags)</a></td>
+  
+    <td class="summary_synopsis"><p>Adds tags to an item</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#archive/1">archive(options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#archive/2">archive(auth, options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#archive/3">archive(consumer_key, access_token, item_id)</a></td>
+  
+    <td class="summary_synopsis"><p>Archive item</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#clear_tags/1">clear_tags(options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#clear_tags/2">clear_tags(auth, options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#clear_tags/3">clear_tags(consumer_key, access_token, item_id)</a></td>
+  
+    <td class="summary_synopsis"><p>Removes all tags from item</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#create/1">create(options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#create/2">create(auth, options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#create/3">create(consumer_key, access_token, options)</a></td>
+  
+    <td class="summary_synopsis"><p>Adds item to Pocket</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#delete/1">delete(options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#delete/2">delete(auth, options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#delete/3">delete(consumer_key, access_token, item_id)</a></td>
+  
+    <td class="summary_synopsis"><p>Delete item</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#fav/1">fav(options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#fav/2">fav(auth, options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#fav/3">fav(consumer_key, access_token, item_id)</a></td>
+  
+    <td class="summary_synopsis"><p>Adds item to favorites</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#get/1">get(options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#get/2">get(auth, options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#get/3">get(consumer_key, access_token, options)</a></td>
+  
+    <td class="summary_synopsis"><p>Gets items from the Pocket API, based on the optional parameters
+The optional parameters can be sent in Elixir formatting (underscores) instead
+of Pocket’s bumpy case</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#remove_tags/1">remove_tags(options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#remove_tags/2">remove_tags(auth, options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#remove_tags/4">remove_tags(consumer_key, access_token, item_id, tags)</a></td>
+  
+    <td class="summary_synopsis"><p>Removes tags from an item</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#rename_tag/1">rename_tag(options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#rename_tag/2">rename_tag(auth, options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#rename_tag/4">rename_tag(consumer_key, access_token, item_id, options)</a></td>
+  
+    <td class="summary_synopsis"><p>Ranames tag — affects all items with this tag</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#replace_tags/1">replace_tags(options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#replace_tags/2">replace_tags(auth, options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#replace_tags/4">replace_tags(consumer_key, access_token, item_id, tags)</a></td>
+  
+    <td class="summary_synopsis"><p>Replaces tags for an item</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#unarchive/1">unarchive(options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#unarchive/2">unarchive(auth, options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#unarchive/3">unarchive(consumer_key, access_token, item_id)</a></td>
+  
+    <td class="summary_synopsis"><p>Unarchive item</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#unfav/1">unfav(options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#unfav/2">unfav(auth, options)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#unfav/3">unfav(consumer_key, access_token, item_id)</a></td>
+  
+    <td class="summary_synopsis"><p>Remove item from favorites</p>
+</td>
+  
+</tr>
+
+        </table>
+      
+
+      
+
+      
+        <section id="functions_details" class="details_list">
+          <h2>Functions</h2>
+          <section class="detail">
+  <div class="detail_header" id="add_tags/1">
+    <span class="signature"><strong>add_tags(options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#add_tags/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="add_tags/2">
+    <span class="signature"><strong>add_tags(auth, options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#add_tags/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="add_tags/4">
+    <span class="signature"><strong>add_tags(consumer_key, access_token, item_id, tags)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#add_tags/4" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Adds tags to an item</p>
+
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="archive/1">
+    <span class="signature"><strong>archive(options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#archive/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="archive/2">
+    <span class="signature"><strong>archive(auth, options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#archive/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="archive/3">
+    <span class="signature"><strong>archive(consumer_key, access_token, item_id)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#archive/3" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Archive item</p>
+
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="clear_tags/1">
+    <span class="signature"><strong>clear_tags(options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#clear_tags/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="clear_tags/2">
+    <span class="signature"><strong>clear_tags(auth, options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#clear_tags/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="clear_tags/3">
+    <span class="signature"><strong>clear_tags(consumer_key, access_token, item_id)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#clear_tags/3" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Removes all tags from item</p>
+
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="create/1">
+    <span class="signature"><strong>create(options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#create/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="create/2">
+    <span class="signature"><strong>create(auth, options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#create/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="create/3">
+    <span class="signature"><strong>create(consumer_key, access_token, options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#create/3" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Adds item to Pocket</p>
+
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="delete/1">
+    <span class="signature"><strong>delete(options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#delete/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="delete/2">
+    <span class="signature"><strong>delete(auth, options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#delete/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="delete/3">
+    <span class="signature"><strong>delete(consumer_key, access_token, item_id)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#delete/3" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Delete item</p>
+
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="fav/1">
+    <span class="signature"><strong>fav(options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#fav/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="fav/2">
+    <span class="signature"><strong>fav(auth, options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#fav/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="fav/3">
+    <span class="signature"><strong>fav(consumer_key, access_token, item_id)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#fav/3" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Adds item to favorites</p>
+
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="get/1">
+    <span class="signature"><strong>get(options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#get/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="get/2">
+    <span class="signature"><strong>get(auth, options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#get/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="get/3">
+    <span class="signature"><strong>get(consumer_key, access_token, options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#get/3" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Gets items from the Pocket API, based on the optional parameters
+The optional parameters can be sent in Elixir formatting (underscores) instead
+of Pocket’s bumpy case</p>
+<p>Optional Parameters
+state           string            See below for valid values
+favorite        0 or 1            See below for valid values
+tag             string            See below for valid values
+contentType     string            See below for valid values
+sort            string            See below for valid values
+detailType      string            See below for valid values
+search          string            Only return items whose title or url contain the search string
+domain          string            Only return items from a particular domain
+since           timestamp         Only return items modified since the given since unix timestamp
+count           integer           Only return count number of items
+offset          integer           Used only with count; start returning from offset position of results</p>
+<p>state
+unread          = only return unread items (default)
+archive         = only return archived items
+all             = return both unread and archived items</p>
+<p>favorite
+0               = only return un-favorited items
+1               = only return favorited items</p>
+<p>tag
+tag<em>name        = only return items tagged with tag_name
+_untagged</em>      = only return untagged items</p>
+<p>contentType
+article         = only return articles
+video           = only return videos or articles with embedded videos
+image           = only return images</p>
+<p>sort
+newest          = return items in order of newest to oldest
+oldest          = return items in order of oldest to newest
+title           = return items in order of title alphabetically
+site            = return items in order of url alphabetically</p>
+<p>detailType
+simple          = only return the titles and urls of each item
+complete        = return all data about each item, including tags, images, authors, videos and more</p>
+
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="remove_tags/1">
+    <span class="signature"><strong>remove_tags(options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#remove_tags/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="remove_tags/2">
+    <span class="signature"><strong>remove_tags(auth, options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#remove_tags/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="remove_tags/4">
+    <span class="signature"><strong>remove_tags(consumer_key, access_token, item_id, tags)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#remove_tags/4" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Removes tags from an item</p>
+
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="rename_tag/1">
+    <span class="signature"><strong>rename_tag(options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#rename_tag/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="rename_tag/2">
+    <span class="signature"><strong>rename_tag(auth, options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#rename_tag/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="rename_tag/4">
+    <span class="signature"><strong>rename_tag(consumer_key, access_token, item_id, options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#rename_tag/4" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Ranames tag — affects all items with this tag</p>
+
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="replace_tags/1">
+    <span class="signature"><strong>replace_tags(options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#replace_tags/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="replace_tags/2">
+    <span class="signature"><strong>replace_tags(auth, options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#replace_tags/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="replace_tags/4">
+    <span class="signature"><strong>replace_tags(consumer_key, access_token, item_id, tags)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#replace_tags/4" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Replaces tags for an item</p>
+
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="unarchive/1">
+    <span class="signature"><strong>unarchive(options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#unarchive/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="unarchive/2">
+    <span class="signature"><strong>unarchive(auth, options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#unarchive/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="unarchive/3">
+    <span class="signature"><strong>unarchive(consumer_key, access_token, item_id)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#unarchive/3" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Unarchive item</p>
+
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="unfav/1">
+    <span class="signature"><strong>unfav(options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#unfav/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="unfav/2">
+    <span class="signature"><strong>unfav(auth, options)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#unfav/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="unfav/3">
+    <span class="signature"><strong>unfav(consumer_key, access_token, item_id)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#unfav/3" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Remove item from favorites</p>
+
+  </section>
+  
+</section>
+
+        </section>
+      
+
+      
+
+      
+    </section>
+  </body>
+</html>
