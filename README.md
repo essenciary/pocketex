@@ -31,4 +31,5 @@ access_token = response["access_token"]`
                             %{count: 10, detail_type: "complete", sort: "newest",
                             state: "unread", content_type: "all"})`
 
-For additional information, check out the example app and the docs.
+For additional information, check out the example app (https://github.com/essenciary/pocketex_demo_app)
+or the docs (http://essenciary.github.io/pocketex/doc/)
