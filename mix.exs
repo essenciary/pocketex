@@ -7,6 +7,8 @@ defmodule Pocketex.Mixfile do
      deps_path: "../../deps",
      lockfile: "../../mix.lock",
      elixir: "~> 1.0",
+     description: description,
+     package: package,
      deps: deps]
   end
 
@@ -37,5 +39,20 @@ defmodule Pocketex.Mixfile do
       {:earmark, "~> 0.1", only: :dev},
       {:ex_doc, "~> 0.7", only: :dev}
     ]
+  end
+
+  defp description do
+    """
+    Pocketex is an Elixir client for the Pocket read later service (getpocket.com)
+    """
+  end
+
+  defp package do
+    [# These are the default files included in the package
+     files: ["config", "doc", "lib", "test", "mix.exs", "README*"],
+     contributors: ["Adrian Salceanu"],
+     licenses: ["GPLv3"],
+     links: %{"GitHub" => "https://github.com/essenciary/pocketex",
+              "Docs" => "http://essenciary.github.io/pocketex/doc/"}]
   end
 end
