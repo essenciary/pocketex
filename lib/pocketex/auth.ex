@@ -10,7 +10,8 @@ defmodule Pocketex.Auth do
 
   @doc """
   Obtain a request token.
-  To begin the Pocket authorization process, your application must obtain a request token from our servers by making a POST request.
+  To begin the Pocket authorization process, the application must obtain a
+  request token from the Pocket servers by making a POST request.
   """
 
   def get_request_token(consumer_key, redirect_uri) do
@@ -22,7 +23,8 @@ defmodule Pocketex.Auth do
     """
 
     HTTPoison.start
-    HTTPoison.post!(@request_token_method_url, payload, @request_headers_json) |> Pocketex.Response.format_token_response
+    HTTPoison.post!(@request_token_method_url, payload, @request_headers_json)
+    |> Pocketex.Response.format_token_response
   end
 
   @doc """
@@ -45,7 +47,8 @@ defmodule Pocketex.Auth do
     """
 
     HTTPoison.start
-    HTTPoison.post!(@authorize_method_url, payload, @request_headers_json) |> Pocketex.Response.format_response
+    HTTPoison.post!(@authorize_method_url, payload, @request_headers_json)
+    |> Pocketex.Response.format_response
   end
 
 end

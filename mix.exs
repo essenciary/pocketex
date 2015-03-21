@@ -3,7 +3,7 @@ defmodule Pocketex.Mixfile do
 
   def project do
     [app: :pocketex,
-     version: "0.0.1",
+     version: "0.1.0",
      deps_path: "../../deps",
      lockfile: "../../mix.lock",
      elixir: "~> 1.0",
@@ -33,7 +33,9 @@ defmodule Pocketex.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 0.6"},
-      {:poison, "~> 1.3.1"}
+      {:poison, "~> 1.3.1"},
+      {:earmark, "~> 0.1", only: :dev},
+      {:ex_doc, "~> 0.7", only: :dev}
     ]
   end
 end
