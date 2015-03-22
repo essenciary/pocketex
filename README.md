@@ -18,6 +18,7 @@ Redirect the user to the Pocket oAuth2 page, for authentication and
 authorization, passing in your received request token and the callback URL.
 
 `request_token = response[:request_token]`
+
 `redirect(external: Pocketex.Auth.autorization_uri(response[:request_token], (WebUi.Router.Helpers.pocket_path(conn, :callback) |> WebUi.Endpoint.url)))`
 
 Upon successful authentication and authorization, you will receive an
