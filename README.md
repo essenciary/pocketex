@@ -25,6 +25,7 @@ Upon successful authentication and authorization, you will receive an
 access token which will be used for further requests.
 
 `{:ok, response} = Pocketex.Auth.authorize(@consumer_key, request_token)`
+
 `access_token = response["access_token"]`
 
 We're good to go now, let's get the newest 10 unread items:
