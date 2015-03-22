@@ -19,15 +19,16 @@ authorization, passing in your received request token and the callback URL.
 
 `request_token = response[:request_token]`
 
-`redirect(external: Pocketex.Auth.autorization_uri(response[:request_token], (WebUi.Router.Helpers.pocket_path(conn, :callback) |> WebUi.Endpoint.url)))`
+`redirect(external: Pocketex.Auth.autorization_uri(request_token, (WebUi.Router.Helpers.pocket_path(conn, :callback) |> WebUi.Endpoint.url)))`
 
 Upon successful authentication and authorization, you will receive an
 access token which will be used for further requests.
 
-`{:ok, response} = Pocketex.Auth.authorize(@consumer_key, request_token)
-access_token = response["access_token"]`
+`{:ok, response} = Pocketex.Auth.authorize(@consumer_key, request_token)`
+`access_token = response["access_token"]`
 
-You're good to go now
+We're good to go now, let's get the newest 10 unread items:
+
 `response = Pocketex.Item.get(@consumer_key, access_token,
                             %{count: 10, detail_type: "complete", sort: "newest",
                             state: "unread", content_type: "all"})`
