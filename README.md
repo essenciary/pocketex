@@ -12,7 +12,6 @@ will POST the auth data at the end of the authorization process.
 Look here for more details: [http://getpocket.com/developer/docs/authentication]()
 
 Get a request token
-
 `{:ok, response} = Pocketex.Auth.get_request_token(@consumer_key, @redirect_uri)`
 
 Redirect the user to the Pocket oAuth2 page, for authentication and
