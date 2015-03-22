@@ -5,8 +5,9 @@ Pocketex is an Elixir client for the Pocket read later service ([getpocket.com](
 
 ##Getting started
 
-* Get a consumer key for your app from [http://getpocket.com/developer/apps/new]()
-* Setup a web page in your app which will serve as the redirect URL where Pocket
+Get a consumer key for your app from [http://getpocket.com/developer/apps/new]()
+
+Setup a web page in your app which will serve as the redirect URL where Pocket
 will POST the auth data at the end of the authorization process.
 Look here for more details: [http://getpocket.com/developer/docs/authentication]()
 
