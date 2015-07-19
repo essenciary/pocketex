@@ -8,7 +8,7 @@ defmodule Pocketex.Response do
   """
   def format_base(response) do
     %{
-      headers:      response.headers,
+      headers:      Enum.into(response.headers, %{}),
       body:         response.body,
       status_code:  response.status_code
     }
@@ -35,15 +35,11 @@ defmodule Pocketex.Response do
   """
 
   def format_token_response(response) do
-    if Map.has_key?(response, :status_code) do
-      case response.status_code do
-        200 ->
-          Pocketex.Response.format(:request_token, response)
-        _ ->
-          Pocketex.Error.format(:pocket_error, response)
-      end
-    else
-      {:ko, response}
+    case response.status_code do
+      200 ->
+        Pocketex.Response.format(:request_token, response)
+      _ ->
+        Pocketex.Error.format(:pocket_error, response)
     end
   end
 
@@ -53,15 +49,11 @@ defmodule Pocketex.Response do
   """
 
   def format_response(response) do
-    if Map.has_key?(response, :status_code) do
-      case response.status_code do
-        200 ->
-          {:ok, Poison.Parser.parse!(response.body)}
-        _ ->
-          Pocketex.Error.format(:pocket_error, response)
-      end
-    else
-      {:ko, response}
+    case response.status_code do
+      200 ->
+        {:ok, Poison.Parser.parse!(response.body)}
+      _ ->
+        Pocketex.Error.format(:pocket_error, response)
     end
   end
 
