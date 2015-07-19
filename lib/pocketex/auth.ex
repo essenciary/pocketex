@@ -24,6 +24,7 @@ defmodule Pocketex.Auth do
 
     HTTPoison.start
     HTTPoison.post!(@request_token_method_url, payload, @request_headers_json)
+    |> Pocketex.Response.format_base
     |> Pocketex.Response.format_token_response
   end
 
@@ -48,6 +49,7 @@ defmodule Pocketex.Auth do
 
     HTTPoison.start
     HTTPoison.post!(@authorize_method_url, payload, @request_headers_json)
+    |> Pocketex.Response.format_base
     |> Pocketex.Response.format_response
   end
 
