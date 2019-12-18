@@ -1,15 +1,14 @@
-![pocketex_logo](http://essenciary.com/public/pocketex2_128.png)
-#Pocketex
-Pocketex is an Elixir client for the Pocket read later service ([getpocket.com]())
+# Pocketex
+Pocketex is an Elixir client for the Pocket read later service [Pocket](https://getpocket.com)
 
 
-##Getting started
+## Getting started
 
-Get a consumer key for your app from [http://getpocket.com/developer/apps/new]()
+Get a consumer key for your app from http://getpocket.com/developer/apps/new
 
 Setup a web page in your app which will serve as the redirect URL where Pocket
 will POST the auth data at the end of the authorization process.
-Look here for more details: [http://getpocket.com/developer/docs/authentication]()
+Look here for more details: http://getpocket.com/developer/docs/authentication
 
 Get a request token
 `{:ok, response} = Pocketex.Auth.get_request_token(@consumer_key, @redirect_uri)`
@@ -34,5 +33,5 @@ We're good to go now, let's get the newest 10 unread items:
                             %{count: 10, detail_type: "complete", sort: "newest",
                             state: "unread", content_type: "all"})`
 
-For additional information, check out the example app (https://github.com/essenciary/pocketex_demo_app)
-or the docs (http://essenciary.github.io/pocketex/doc/)
+For additional information, check out the example app https://github.com/essenciary/pocketex_demo_app
+or the docs http://essenciary.github.io/pocketex/doc/
